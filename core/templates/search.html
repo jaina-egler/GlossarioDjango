@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Pesquisar pela definição</button>
+    <button class="dropdown-item" type="button"></button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
+Achamos um total de {{ quant }} palavras com "{{query2}}"
+<ul class="list-group">
+    {% for word in object_list %}
+      <a href="{% url 'word' word.id%}" class="list-group-item list-group-item-action">  {{ word.word }}</a>
+    {% empty %}
+      <li>Não achamos nada parecido, desculpe.<hr>Por favor, tente outra palavra</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+          
+    

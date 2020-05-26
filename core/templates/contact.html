@@ -1,0 +1,19 @@
+{% load bootstrap4 %}
+<head>
+    {% bootstrap_css %}
+</head>
+<body>
+{% include "base.html"%}
+
+    {% bootstrap_javascript jquery='full' %}
+    <h1>Contato</h1>
+    <form action="{% url 'contact' %}" method="post" class="form" autocomplete="off">
+        {% csrf_token %}
+    {%bootstrap_form form%}
+    
+       {% buttons %}
+       <button type = 'submit' class = 'btn btn-primary'>Envie para nós!</button>
+       {% endbuttons %}
+       
+    </form> 
+</body>

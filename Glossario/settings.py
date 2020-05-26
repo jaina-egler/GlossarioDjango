@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',#app
+    'bootstrap4'#Para o template de contato
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'Glossario.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],#pega a pastsa de templates dentro do core
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,4 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'#pega os arquivos estáticos (js, css, imgs) do core
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'

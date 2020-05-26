@@ -1,7 +1,7 @@
 from django.db import models
 
 class Glossario(models.Model):
-    image = models.ImageField(upload_to="uploads/",height_field=100, width_field=200,max_length = 100,),
+    image=models.ImageField(upload_to="media/", blank = True)
     word = models.CharField("Termo",max_length=50)
     areaC =(
         ('Ciências exatas e da terra','Ciências exatas e da terra'),

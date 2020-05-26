@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import IndexView, SearchResultsView, WordDetailView, ContactFormView, ErrorView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', IndexView.as_view(), name='index'),
+      path('search/', SearchResultsView.as_view(), name='search'),
+      path('word/<int:pk>',WordDetailView.as_view(), name='word' ),
+      path('contact/', ContactFormView.as_view(), name = 'contact'),
+      path('404', ErrorView.as_view(), name= 'error')
 ]
+
+admin.AdminSite.site_header = "Administração do glossário"
+admin.AdminSite.site_title = "Sistema glossário"
+admin.AdminSite.index_title = "Sistema glossário"
