@@ -123,3 +123,6 @@ STATIC_URL = '/static/'#pega os arquivos estáticos (js, css, imgs) do core
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
+
+#configurações de e-mail
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

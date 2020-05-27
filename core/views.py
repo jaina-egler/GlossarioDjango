@@ -10,6 +10,10 @@ from django.urls import reverse_lazy
 
 from django.contrib import messages
 
+from django.shortcuts import render_to_response
+
+from django.template import RequestContext
+
 class IndexView(TemplateView):
     template_name = "index.html"
     def get_context_data(self, **kwargs):
@@ -43,6 +47,7 @@ class ContactFormView(FormView):
     def form_invalid(self, form):
         messages.error(self.request, "Erro ao preencher formulário")
         return super().form_invalid(form)
+
 
 
 # Create your views here.

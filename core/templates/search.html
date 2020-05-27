@@ -10,12 +10,12 @@
     <button class="dropdown-item" type="button">Something else here</button>
   </div>
 </div>
-Achamos um total de {{ quant }} palavras com "{{query2}}"
+<h1> um total de {{ quant }} palavras com "{{query2}}"</h1>
 <ul class="list-group">
     {% for word in object_list %}
       <a href="{% url 'word' word.id%}" class="list-group-item list-group-item-action">  {{ word.word }}</a>
     {% empty %}
-      <li>Não achamos nada parecido, desculpe.<hr>Por favor, tente outra palavra</li>
+      <li><h2>Não achamos nada parecido, desculpe.</h2><hr>Por favor, tente outra palavra</li>
     {% endfor %}
 </ul>
 {% endblock %}

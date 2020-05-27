@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from core.views import IndexView, SearchResultsView, WordDetailView, ContactFormView, ErrorView
 
+
+from django.conf import settings
+from django.conf.urls.static import static 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
@@ -24,7 +28,7 @@ urlpatterns = [
       path('word/<int:pk>',WordDetailView.as_view(), name='word' ),
       path('contact/', ContactFormView.as_view(), name = 'contact'),
       path('404', ErrorView.as_view(), name= 'error')
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)#acesso aos arquivos de midia nos templates
 
 admin.AdminSite.site_header = "Administração do glossário"
 admin.AdminSite.site_title = "Sistema glossário"
