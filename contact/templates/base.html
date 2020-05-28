@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<title>Home</title>
 </head>
-<body>
+<body style="margin-left: 10px;margin-right: 10px;">
 	<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#004100; color: #FFF">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,16 +14,13 @@
     <a class="navbar-brand" href="#"><img src="{% static "core/img/ifro.png" %}" alt="My image" style="width: 200px;height: 50px;" ></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'index' %}">Home </a>
+        <a class="nav-link" href="{url 'index'}">Home </a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="{% url 'contact' %}">Fale conosco</a>
+        <a class="nav-link" href="#">Fale conosco</a>
       </li>
       <li class="nav-item">
         <a class="nav-link">Sobre nós</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'management' %}">Admin</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">

@@ -2,7 +2,7 @@
 {% block content %}
   <div class="card text-center">
       <div>
-        <img src="{{glossario.image.urls}}" style=" min-width: min-content;filter:blur(0px);height:50%;width:50%;" class="img-fluid" alt="Responsive image">
+        <img src="{{ glossario.image.urls }}" style=" min-width: min-content;filter:blur(0px);height:50%;width:50%;" class="img-fluid" alt="Imagem relacionada ao termo {{glossario.word}}">
       </div>
 <div class="card-header">
     <img src="">
@@ -15,8 +15,8 @@
       {{glossario.area }}
   </div>
     <div class="card-body">
-      <h5 class="card-title">{{glossario.trans }}</h5>
-      <p class="card-text">{{ glossario.defin }}</p>
+      <h5 class="card-title">{{glossario.translation }}</h5>
+      <p class="card-text">{{ glossario.definition }}</p>
     </div>
     <div class="card-footer text-muted">
         Criado em: {{ glossario.createdAt }}

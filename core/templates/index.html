@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Index</h1>
+<ul class="list-group">
+    {% for word in todos %}
+      <a href="{% url 'word' word.id%}" class="list-group-item list-group-item-action">  {{ word.word }}</a>
+    {% empty %}
+      <li><h2>Não achamos nada parecido, desculpe.</h2><hr>Por favor, tente outra palavra</li>
+    {% endfor %}
+</ul>
 {% endblock %}
