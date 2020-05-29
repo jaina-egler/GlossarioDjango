@@ -1,4 +1,27 @@
-{% extends 'base.html' %}
+{% extends 'baseAdm.html' %}
 {% block content %}
 <h1>O ADMINISTRADOR ESTÁ ONLINE</h1>
+<div class="col-md-6">
+<div class="card border-success mb-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Administração do glossário</h5>
+      <p class="card-text">Adicione, atualize ou remova termos do glossário.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><a href="{% url 'all' %}">Ver termos do glossário</a></li>
+      
+    </ul>
+  </div>
+</div>
+<div class="col-md-6">
+<div class="card border-dark mb-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Administração das mensagens</h5>
+      <p class="card-text">Visualize ou remova mensagens.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><a href="{% url 'allMessages' %}">Ver mensagens</a></li>
+    </ul>
+  </div>
+</div>
 {% endblock %}

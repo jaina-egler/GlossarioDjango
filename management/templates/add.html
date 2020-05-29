@@ -1,0 +1,32 @@
+{% extends 'baseAdm.html' %}
+{% block content %}
+{% load bootstrap4 %}
+<head>
+    {% bootstrap_css %}
+</head>
+<body>
+
+    {% bootstrap_javascript jquery='full' %}
+    <div class="container">
+        {% if messages %}
+        {% for m in messages %}
+        <div class="alert alert-{{m.tags}}">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            <strong>{{ m }}</strong>
+        </div>
+        <h3>Volte para a <a href="{% url 'all' %}">lista de palavras</a></h3>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <h1>Contato</h1>
+    <form action="{% url 'add' %}" method="post" class="form" autocomplete="off">
+        {% csrf_token %}
+    {%bootstrap_form form%}
+    
+       {% buttons %}
+       <button type = 'submit' class = 'btn btn-primary'>Adicionar termo</button>
+       {% endbuttons %}
+       
+    </form> 
+</body>
+{% endblock %}

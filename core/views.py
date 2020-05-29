@@ -9,12 +9,14 @@ from django.urls import reverse_lazy
 
 from django.contrib import messages
 
-
+from django.core.paginator import Paginator, InvalidPage
 
 from django.template import RequestContext
 
-class IndexView(TemplateView):
+class IndexView(ListView):
     template_name = "index.html"
+    model = Glossario
+    ITEMS_PER_PAGE = 5
     def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
             context['todos'] = Glossario.objects.all().order_by('word')

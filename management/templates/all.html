@@ -1,0 +1,11 @@
+{% extends 'baseAdm.html' %}
+{% block content %}
+          {% for term in all %}
+          <div class="col-md-6" style="margin-bottom: 15px;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="url 'details' term.id">{{term.word}}</a></li> </div>
+            <div class="col-md-6">
+            <a href="{% url 'delete' term.id %}"><button type="submit" class="btn btn-primary">Deletar</button></a></div> 
+          {% endfor %}
+        </ul>
+{% endblock %}

@@ -2,10 +2,23 @@
 {% block content %}
 <h1>Index</h1>
 <ul class="list-group">
-    {% for word in todos %}
-      <a href="{% url 'word' word.id%}" class="list-group-item list-group-item-action">  {{ word.word }}</a>
+    {% for glossario in todos %}
+      <a href="{% url 'word' glossario.id%}" class="list-group-item list-group-item-action">  {{ glossario.word }}</a>
     {% empty %}
       <li><h2>Não achamos nada parecido, desculpe.</h2><hr>Por favor, tente outra palavra</li>
     {% endfor %}
 </ul>
+{% if is_paginated %}
+<nav aria-label = 'navegacao'>
+  <ul class="pagination">
+    {% for num in paginator.page_range %}
+    {% if page.obg.number == num %}
+    <li class="page-item active"><a class="page-link" href="#">{{num}}</a></li>
+    {% else %}
+    <li class="page-item active"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{num}}</a></li>
+    {% endif %}
+    {% endfor %}
+{% endif %}
+  </ul>
+</nav><!--Não mostra a 3 pag-->
 {% endblock %}
