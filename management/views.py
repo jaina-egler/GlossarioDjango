@@ -50,4 +50,7 @@ class AllMessagesView(LoginRequiredMixin,ListView):
         context = super().get_context_data(**kwargs)
         context['all'] = Contact.objects.all().order_by('-sendAt')
         return context
+class DetailsMessageView(LoginRequiredMixin,ListView):
+    model = Glossario
+    template_name = 'seeContacts.html'
 # Create your views here.
