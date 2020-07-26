@@ -1,8 +1,8 @@
 from django import forms
 
-from core.models import Glossario
+from core.models import Terminology
 
 class AddTermForm(forms.ModelForm):
    class Meta:
-        model = Glossario
+        model = Terminology
         fields = ['image','word','area','expression','definition']

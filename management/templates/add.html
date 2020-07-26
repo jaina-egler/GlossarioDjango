@@ -5,9 +5,8 @@
     {% bootstrap_css %}
 </head>
 <body>
-
+    <h1>Adicionar palavras</h1>
     {% bootstrap_javascript jquery='full' %}
-    <div class="container">
         {% if messages %}
         {% for m in messages %}
         <div class="alert alert-{{m.tags}}">
@@ -17,8 +16,7 @@
         <h3>Volte para a <a href="{% url 'all' %}">lista de palavras</a></h3>
         {% endfor %}
         {% endif %}
-    </div>
-    <h1>Contato</h1>
+        
     <form action="{% url 'add' %}" method="post" class="form" autocomplete="off">
         {% csrf_token %}
     {%bootstrap_form form%}

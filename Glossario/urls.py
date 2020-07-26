@@ -22,8 +22,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
+    path('contact/',include('contact.urls'))
 ]
 
-admin.AdminSite.site_header = "Administração do glossário"
-admin.AdminSite.site_title = "Sistema glossário"
-admin.AdminSite.index_title = "Sistema glossário"
+admin.AdminSite.site_header = "Administração do glossário"#define o título da página
+admin.AdminSite.site_title = "Sistema glossário"#define o nome do app que aparece na tela de login do admin, o que é de grande ajuda caso você esteja desenvolvendo mais de uma aplicação django
+admin.AdminSite.index_title = "Sistema glossário"#Define o nome do projeto que aparece ao já ter feito login no django admin

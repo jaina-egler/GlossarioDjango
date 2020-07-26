@@ -12,7 +12,7 @@ class ContactFormView(CreateView):
     form_class = ContactForm
     success_url = reverse_lazy('contact')
     def form_valid(self, form):
-        messages.success(self.request, "Email enviado com sucesso")
+        messages.success(self.request, "Mensagem enviada com sucesso")
         return super().form_valid(form)
     def form_invalid(self, form):
         messages.error(self.request, "Erro ao preencher formulário")

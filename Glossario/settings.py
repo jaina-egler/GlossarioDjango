@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap_breadcrumbs',
     'core',#app
     'contact',#app apenas para contatos (reutilizável)
     'management',#app apenas para administração, reutilizaável
     'bootstrap4',#Para o template de contato
+    'django_filters',
+    
 
 ]
 
@@ -124,8 +127,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'#pega os arquivos estáticos (js, css, imgs) do core
 
-MEDIA_URL = '/upload/'
-MEDIA_ROOT = 'upload/'
-
-#configurações de e-mail
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'

@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="card text-center">
-      <div>
-        <img src="{{ glossario.image.urls }}" style=" min-width: min-content;filter:blur(0px);height:50%;width:50%;" class="img-fluid" alt="Imagem relacionada ao termo {{glossario.word}}">
-      </div>
-
-    <div class="card-header">
-        {{glossario.word }}
-    </div>
-    <div class="card-header">
-      {{glossario.area }}
+<title>{{terminology.word}}</title>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+    <li class="breadcrumb-item">{{terminology.word}}</li>
+  </ol>
+</nav>
+<div class="card text-center">  
+  <div>
+    <img src="{{ terminology.image.url }}" style="height:450px;width:470px;  width: auto;
+    height: auto; "
+      class="img-fluid" alt="Imagem relacionada ao termo {{terminology.word}}">
   </div>
-    <div class="card-body">
-      <h5 class="card-title">{{glossario.translation }}</h5>
-      <p class="card-text">{{ glossario.definition }}</p>
-    </div>
-    <div class="card-footer text-muted">
-        Criado em: {{ glossario.createdAt }}
-    </div>
+  <div class="card-header">
+    {{terminology.word }}
   </div>
-  
+  <div class="card-header">
+    {{terminology.area }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{terminology.translation }}</h5>
+    <p class="card-text">{{ terminology.definition }}</p>
+  </div>
+  <div class="card-footer text-muted">
+    Criado em: {{ terminology.createdAt }}
+  </div>
+  <div class="card-footer text-muted">
+    Atualizado em: {{ terminology.updatedAt }}
+  </div>
+</div>
 {% endblock %}
-
-    

@@ -1,12 +1,13 @@
 {% load bootstrap4 %}
-<head>
+    <title>Fale conosco!</title>
     {% bootstrap_css %}
-</head>
-<body>
-{% include "base.html"%}
 
+{% include "contact-base.html"%}
+
+<div class="col-sm">
+<h1 >Contato</h1>
     {% bootstrap_javascript jquery='full' %}
-    <div class="container">
+   
         {% if messages %}
         {% for m in messages %}
         <div class="alert alert-{{m.tags}}">
@@ -16,8 +17,7 @@
         <h3>Volte para <a href="{% url 'index' %}">index</a></h3>
         {% endfor %}
         {% endif %}
-    </div>
-    <h1>Contato</h1>
+    
     <form action="{% url 'contact' %}" method="post" class="form" autocomplete="off">
         {% csrf_token %}
     {%bootstrap_form form%}
@@ -25,6 +25,5 @@
        {% buttons %}
        <button type = 'submit' class = 'btn btn-primary'>Envie para nós!</button>
        {% endbuttons %}
-       
     </form> 
-</body>
+</div>
